@@ -22,7 +22,20 @@ namespace CityInfo.API.Models
 
         [Required(ErrorMessage = "The {0} is required.")]
         [MaxLength(250, ErrorMessage = "The maximum length for {0} is {1} characters.")]
-        [NotEqualTo("Id", ErrorMessage = "{0} should not match {1}.")]
+        [NotEqualTo("Name", ErrorMessage = "{0} should not match {1}.")]
+        public string Description { get; set; }
+
+    }
+
+    public class PointOfInterestForUpdateDto
+    {
+        [Required(ErrorMessage = "The {0} is required.")]
+        [MaxLength(50, ErrorMessage = "The maximum length for {0} is {1} characters.")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "The {0} is required.")]
+        [MaxLength(250, ErrorMessage = "The maximum length for {0} is {1} characters.")]
+        [NotEqualTo("Name", ErrorMessage = "{0} should not match {1}.")]
         public string Description { get; set; }
 
     }
